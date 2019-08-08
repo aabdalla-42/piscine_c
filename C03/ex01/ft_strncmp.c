@@ -1,16 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aabdalla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/02 12:01:27 by aabdalla          #+#    #+#             */
-/*   Updated: 2019/08/04 15:44:16 by aabdalla         ###   ########.fr       */
+/*   Created: 2019/08/07 16:22:33 by aabdalla          #+#    #+#             */
+/*   Updated: 2019/08/07 16:26:39 by aabdalla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
-void	ft_ft(int *nbr)
+
+int ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	*nbr = 42;
+	int i;
+	int t;
+
+	i=0;
+	t=0;
+	while (s1[i] == s2[i] && s1[i] && i < n )
+	{
+		i++;	
+	}
+	if (n == 0)
+	{
+		return 0;
+	}
+	return ((unsigned char) s1[i] - (unsigned char) s2[i]);
+}
+int main ()
+{
+printf ("%d", ft_strncmp("abdalla","adballa",4));
 }

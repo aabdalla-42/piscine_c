@@ -1,42 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aabdalla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/05 00:55:51 by aabdalla          #+#    #+#             */
-/*   Updated: 2019/08/05 00:56:18 by aabdalla         ###   ########.fr       */
+/*   Created: 2019/08/07 16:22:06 by aabdalla          #+#    #+#             */
+/*   Updated: 2019/08/08 14:30:42 by aabdalla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
+#include <string.h>
+#include <stdio.h>
 
-void ft_sort_int_tab(int *tab, int size)
+int ft_strcmp(char *s1, char *s2)
 {
-    int a;
     int i;
-    int tabtmp;
-    i =0;
-    while (i<size)
+    int t;
+    
+    i=0;
+    t=0;
+    
+    while (s1[i]  || s2[i] )
     {
-        a=0;
-        while (a < (size-1))
+        if (s1[i] != s2[i])
         {
-            
-            if (tab[a]> (tab[a]+1))
-            {
-                tabtmp = tab[a];
-                tab[a]=tab[a+1];
-                tab[a+1]=tabtmp;
-            }
-            a++;
+            t=(unsigned char)s1[i] -(unsigned char)s2[i];
+            return (t);
         }
+        
         i++;
     }
-
-
+    return t;
   
-    
-    }
 
-
+}

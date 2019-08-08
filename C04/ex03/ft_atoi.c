@@ -1,30 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aabdalla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/04 18:03:57 by aabdalla          #+#    #+#             */
-/*   Updated: 2019/08/04 18:31:57 by aabdalla         ###   ########.fr       */
+/*   Created: 2019/08/08 21:08:42 by aabdalla          #+#    #+#             */
+/*   Updated: 2019/08/08 21:09:07 by aabdalla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
-void ft_putstr(char *str)
+int	ft_atoi(char *str)
 {
-int i;
+	int result;
+	int i;
+	int neg;
 
- i = 0;
-while (str[i] != '\0' )
-	{
-		write(1,&str[i],1);
+	i = 0;
+	neg = 1;
+	result = 0;
+	while (str[i] <= ' ')
 		i++;
+	while(str[i] == '-' || str[i] == '+')
+	{
+		neg *=(-1);
+		i++ ;
 	}
-
+	printf("%d",i);
+	while (str[i] >= '0' && str[i] <= '9')
+		{
+		result = result *10 + str[i] -48;
+		i++;
+		}
+		
+	return (result * neg);
 }
- int main(void)
+int main ()
 {
-	char *a ="defrfr";
-	ft_putstr(a);
-	return 0;
+	      
+	printf("%d",ft_atoi("   ------125lsp455"));
 }

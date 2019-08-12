@@ -1,28 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_punbr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aabdalla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/06 16:56:08 by aabdalla          #+#    #+#             */
-/*   Updated: 2019/08/09 13:16:01 by aabdalla         ###   ########.fr       */
+/*   Created: 2019/08/01 20:56:43 by aabdalla          #+#    #+#             */
+/*   Updated: 2019/08/12 11:20:30 by aabdalla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_alpha(char *str)
-{
-	int i;
+#include <unistd.h>
 
-	i = 0;
-	while (str[i])
+void	ft_putchar(int a)
+{
+	write(1, &a, 1);
+}
+
+void	ft_putnbr(int nb)
+{
+	unsigned int n;
+
+	n = nb;
+	if (nb < 0)
 	{
-		if (!((str[i] >= 'a' && str[i] <= 'z') ||
-			(str[i] >= 'A' && str[i] <= 'Z')))
-		{
-			return (0);
-		}
-		i++;
+		ft_putchar('-');
+		n = -nb;
 	}
-	return (1);
+	if (n >= 10)
+	{
+		ft_putnbr(n / 10);
+		ft_putnbr(n % 10);
+	}
+	else
+	{
+		ft_putchar(n + '0');
+	}
 }

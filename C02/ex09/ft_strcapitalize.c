@@ -6,49 +6,34 @@
 /*   By: aabdalla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 20:21:52 by aabdalla          #+#    #+#             */
-/*   Updated: 2019/08/07 13:47:35 by aabdalla         ###   ########.fr       */
+/*   Updated: 2019/08/09 13:07:11 by aabdalla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-char    *ft_strlowcase(char *str)
+char	*ft_strcapitalize(char *str)
 {
-    int i;
-    
-    i = 0;
-    while (str[i])
-    {
-        if (str[i] >= 'A' && str[i] <= 'Z')
-        {
-            str[i] = str[i] + 32;
-        }
-        i++;
-    }
-    if (i == 0)
-    {
-        return (0);
-    }
-    return (str);
-}
+	int i;
 
-char *ft_strcapitalize(char *str)
-{
-    while(str[i])
-   {
-       ft_strlowcase (str[i]);
-   }
-    
-}
-
-
-
-
-
-int main()
-{
-    
-    
-    char gdt[]="dvdvdvghfevehdbv jdguyhgjuygn 4545uhvfmuih59ruvfr efwhih+-efbfebf ";
-    printf("%s", ft_strcapitalize(gdt));
-    
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] = str[i] + 32;
+		i++;
+	}
+	i = 1;
+	if ('a' <= str[0] && str[0] <= 'z')
+		*str -= 32;
+	while (str[i - 1] != '\0')
+	{
+		if (!((str[i - 1] >= 'a' && str[i - 1] <= 'z')
+					|| (str[i - 1] >= 'A' && str[i - 1] <= 'Z')
+					|| (str[i - 1] >= '0' && str[i - 1] <= '9')))
+		{
+			if (str[i] >= 'a' && str[i] <= 'z')
+				str[i] = str[i] - 32;
+		}
+		i++;
+	}
+	return (str);
 }

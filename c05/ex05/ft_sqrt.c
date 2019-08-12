@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aabdalla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/06 16:56:08 by aabdalla          #+#    #+#             */
-/*   Updated: 2019/08/09 13:16:01 by aabdalla         ###   ########.fr       */
+/*   Created: 2019/08/12 12:04:31 by aabdalla          #+#    #+#             */
+/*   Updated: 2019/08/12 22:33:26 by aabdalla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_alpha(char *str)
+int		ft_sqrt(int nb)
 {
 	int i;
+	int r;
 
-	i = 0;
-	while (str[i])
+	r = 1;
+	i = 1;
+	while (r <= nb / 2)
 	{
-		if (!((str[i] >= 'a' && str[i] <= 'z') ||
-			(str[i] >= 'A' && str[i] <= 'Z')))
+		i = r * r;
+		if (i == nb)
 		{
-			return (0);
+			return (r);
 		}
-		i++;
+		r++;
 	}
-	return (1);
+	return (0);
 }

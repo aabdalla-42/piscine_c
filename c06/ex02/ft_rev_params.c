@@ -1,28 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aabdalla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/06 16:56:08 by aabdalla          #+#    #+#             */
-/*   Updated: 2019/08/09 13:16:01 by aabdalla         ###   ########.fr       */
+/*   Created: 2019/08/12 16:02:59 by aabdalla          #+#    #+#             */
+/*   Updated: 2019/08/12 17:44:20 by aabdalla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_alpha(char *str)
+#include <unistd.h>
+void ft_putstr(char *str)
 {
 	int i;
 
 	i = 0;
-	while (str[i])
+	while(str[i])
 	{
-		if (!((str[i] >= 'a' && str[i] <= 'z') ||
-			(str[i] >= 'A' && str[i] <= 'Z')))
-		{
-			return (0);
-		}
+		write (1, &str[i], 1 );
 		i++;
 	}
-	return (1);
+}
+int ft_strlen(char *str)
+{
+	int i; 
+
+	i = 0;
+	while (str[i])
+	{
+		i++;
+	}
+	return (i);
+}
+
+int main (int argc, char ** argv)
+{
+	int i ;
+	
+	i = argc - 1;
+	if (argc == 0)
+		return (0);
+	while (i >= 1)
+	{
+		ft_putstr(&argv[i][0]);
+		i--;
+	}
 }

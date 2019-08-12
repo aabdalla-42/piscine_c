@@ -1,16 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aabdalla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/07 16:24:43 by aabdalla          #+#    #+#             */
-/*   Updated: 2019/08/07 16:35:30 by aabdalla         ###   ########.fr       */
+/*   Created: 2019/08/07 14:58:05 by aabdalla          #+#    #+#             */
+/*   Updated: 2019/08/12 10:33:14 by aabdalla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned  int ft_strlcat(char *dest, char *src, unsigned int size)
+int	ft_strlen(char *str)
 {
+	int i;
 
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }

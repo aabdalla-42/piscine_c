@@ -6,22 +6,20 @@
 /*   By: aabdalla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 15:40:00 by aabdalla          #+#    #+#             */
-/*   Updated: 2019/08/06 16:11:42 by aabdalla         ###   ########.fr       */
+/*   Updated: 2019/08/09 12:53:53 by aabdalla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strcpy(char *dest, char *src)
 {
-	char *tab;
 	int i;
 
-	i=0;
-	while ( src[i] != '\0')
+	i = 0;
+	while (src[i] != '\0')
 	{
-		dest[i]=src[i];
+		dest[i] = src[i];
 		i++;
 	}
-	dest[i]= '\0';
-
+	dest[i] = '\0';
 	return (dest);
 }
